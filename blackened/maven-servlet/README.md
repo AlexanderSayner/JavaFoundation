@@ -1,9 +1,16 @@
 Чтобы передать параметр по запросу GET в запросе:
 ```http request
-http://localhost:8080/maven-servlet-1.0-SNAPSHOT/welcome?username=Alex
+http://25.107.123.45:8080/maven-servlet-1.0-SNAPSHOT/welcome?username=Alex
+```
+Также доступно защищённое соединение (появится предупреждение о сомнительности сертификата)
+```http request
+https://25.107.123.45:8443/maven-servlet-1.0-SNAPSHOT/welcome?username=Alex
 ```
 
-Проет создан по туториалу:
+Источники:
 ```http request
 https://javarush.ru/groups/posts/2529-chastjh-5-servletih-pishem-prostoe-veb-prilozhenie
+```
+```http request
+https://javarush.ru/groups/posts/2533-chastjh-6-konteynerih-servletov
 ```

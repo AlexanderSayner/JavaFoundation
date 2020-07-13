@@ -3,8 +3,8 @@ version: "3"
 services:
 
   maven-welcome-servlet:
-    build: blackened/maven-servlet
-    container_name: "welcome_servlet_maven"
+    build: blackened/maven-servlet/
+    container_name: "welcome_tomcat_maven"
     network_mode: "host"
     expose:
       - "8080"

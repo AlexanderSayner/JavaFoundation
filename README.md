@@ -2,7 +2,14 @@
 All about Java &amp; Kotlin
 
 Запуск проекта через docker-compose:
-сервис займёт порт 8080
+```shell script
+$ docker-compose build && docker-compose up 
+```
+Сервис займёт следующие порты 
++ ***8080*** 
++ ***8443***
+
+Чтобы перезапусттиь сервис:
 ```shell script
 $ docker-compose up --build --force-recreate 
 ```

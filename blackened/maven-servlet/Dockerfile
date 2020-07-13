@@ -1,7 +1,7 @@
 FROM maven
 # Сборка проекта
-COPY ./src    /opt/app/src/
-ADD ./pom.xml /opt/app/
+COPY src    /opt/app/src/
+COPY pom.xml /opt/app/
 WORKDIR /opt/app
 RUN mvn package
 
@@ -18,6 +18,10 @@ RUN yum install wget -y  && \
 
 # Загрузка конфигураций Tomcat
 COPY tomcat-users.xml apache-tomcat-9.0.37/conf/
+# Копирование ключа шифрования в папку с проектом
+COPY .keystore /opt/app/
+# Загрузка конфигурации для включения https
+COPY server.xml apache-tomcat-9.0.37/conf/
 
 # Запуск Tomcat
 WORKDIR /opt/apache-tomcat-9.0.37/bin
