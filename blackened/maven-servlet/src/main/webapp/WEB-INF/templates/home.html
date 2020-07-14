@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/main.css" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+<p th:utext="#{home.welcome(${session.user.firstName})}">Welcome to sandbox</p>
+<p th:utext="#{home.today} ">Today: </p>
+<span th:text="${today}">13 February 2011</span>
+</body>
+
+</html>
