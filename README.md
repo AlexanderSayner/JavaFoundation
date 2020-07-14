@@ -5,11 +5,11 @@ All about Java &amp; Kotlin
 ```shell script
 $ docker-compose build && docker-compose up 
 ```
-Сервис займёт следующие порты 
+Сервис займёт следующие порты:
 + ***8080*** 
 + ***8443***
 
-Чтобы перезапусттиь сервис:
+Чтобы перезапустить сервис:
 ```shell script
 $ docker-compose up --build --force-recreate 
 ```

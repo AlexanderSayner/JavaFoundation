@@ -1,4 +1,4 @@
-package org.sayner.sandbox.example.servlet;
+package org.sayner.sandbox.example.web.servlet;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
