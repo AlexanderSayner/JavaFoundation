@@ -23,6 +23,5 @@ $ docker-compose up --build --force-recreate
 
 + *maven-easy* - простейсшее приложение на maven
 + *maven-servlet* - использование технологий Java EE и Thymeleaf, деплой на Tomcat
-+ *maven-spring* - демонстрация возможностей Spring 5, деплой на Tomcat
 + *glassfish-easy* - деплой простейшего приложения Java EE на сервер GlassFish4
 + *gradle-boot* - исследование фреймворка Spring Boot
