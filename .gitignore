@@ -29,5 +29,10 @@ hs_err_pid*
 # Maven build directory
 **/target/
 
+# Gradle build path
+**/build/
+**/gradle/
+**/.gradle/
+
 # Backup files
 *.save
