@@ -1,15 +1,16 @@
 Чтобы передать параметр по запросу GET в запросе:
 ```http request
-http://25.107.123.45:8080/maven-servlet-1.0-SNAPSHOT/welcome?username=Alex
+http://localhost:8080/maven-servlet-1.0-SNAPSHOT/welcome?username=Alex
 ```
 Также доступно защищённое соединение (появится предупреждение о сомнительности сертификата)
 ```http request
-https://25.107.123.45:8443/maven-servlet-1.0-SNAPSHOT/welcome?username=Alex
+https://localhost:8443/maven-servlet-1.0-SNAPSHOT/welcome?username=Alex
 ```
 Пользовательский интерфейс доступен по ссылке:
 ```http request
-https://25.107.123.45:8443/maven-servlet-1.0-SNAPSHOT/ui/home
+https://localhost:8443/maven-servlet-1.0-SNAPSHOT/ui/home
 ```
+Не во всех браузерах отправляется одна и та же сессия, поэтому в некоторых случаях счётчик может не изменяться. Также это может зависеть от того, введён ли ip сервера или домен localhost 
 
 #####***Источники***:
 Сервлеты
