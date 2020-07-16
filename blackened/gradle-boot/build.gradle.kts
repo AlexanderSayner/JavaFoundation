@@ -41,9 +41,10 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-ui:${swaggerVer}") // Open API v3
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.liquibase:liquibase-core")
+    implementation("org.apache.poi:poi-ooxml:${apachePoiVer}") // Java API To Access Microsoft Format Files
 //    implementation("org.apache.poi:poi:${apachePoiVer}") // the Java API for Microsoft Documents
 //    implementation("commons-io:commons-io:${apacheCommonsIoVer}") // is a library of utilities to assist with developing IO functionality
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
+//    developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
