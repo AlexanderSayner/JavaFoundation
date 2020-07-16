@@ -1,3 +1,12 @@
+Домашняя страница приложения:
+```http request
+http://localhost:8080/home
+```
+Документация сервиса:
+```http request
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+```
+
 Пример конфигурирования документации, используя Open API v3
 ```java
 package org.sayner.sandbox.example.springboot.allspringboot.controller;
