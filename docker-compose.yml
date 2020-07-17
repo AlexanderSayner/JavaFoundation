@@ -25,7 +25,7 @@ services:
     depends_on:
       - redis-foundation
 
- redis-foundation:
+  redis-foundation:
     image: redis:6.0.5-buster
     command: ["redis-server", "--appendonly", "yes"]
     container_name: "redis_foundation"
