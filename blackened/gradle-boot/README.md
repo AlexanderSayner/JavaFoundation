@@ -51,3 +51,29 @@ public class BookController {
     }
 }
 ```
+Зайти в консоль контейнера Docker 
+```shell script
+docker exec -ti $(docker ps -a --filter "name=redis_foundation" -q) /bin/sh
+```
+Открыть консоль управления Redis
+```shell script
+redis-cli
+```
+Просмотр всех доступных ключей
+```shell script
+127.0.0.1:6379> keys *
+```
+Просмотр содержимого ключа
+```shell script
+127.0.0.1:6379> HGETALL rulers:5
+```
+Источники:
+
+Конфигурирование Open Api v3
+```http request
+https://www.baeldung.com/spring-rest-openapi-documentation
+```
+Конфигурирование Redis в Spring Boot
+```http request
+https://otus.ru/nest/post/716/
+```

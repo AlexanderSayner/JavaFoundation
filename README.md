@@ -6,7 +6,8 @@ All about Java &amp; Kotlin
 $ docker-compose build && docker-compose up 
 ```
 Сервис займёт следующие порты:
-+ ***4859*** 
++ ***4859***
++ ***6389***  
 + ***8080*** 
 + ***8091***
 + ***8443***
