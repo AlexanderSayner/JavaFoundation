@@ -25,3 +25,14 @@ $ docker-compose up --build --force-recreate
 + *maven-servlet* - использование технологий Java EE и Thymeleaf, деплой на Tomcat
 + *glassfish-easy* - деплой простейшего приложения Java EE на сервер GlassFish4
 + *gradle-boot* - исследование фреймворка Spring Boot
+
+Быся проверка работоспособности приложений:
+```http request
+https://localhost:8443/maven-servlet-1.0-SNAPSHOT/ui/home
+```
+```http request
+http://localhost:8091/glassfish-easy-1.0-SNAPSHOT
+```
+```http request
+http://localhost:8092/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+```

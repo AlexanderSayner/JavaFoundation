@@ -16,3 +16,9 @@ services:
       - "8091:8080"
       - "8454:8443"
       - "4859:4848"
+
+  spring-boot-gradle:
+    build: blackened/gradle-boot
+    container_name: "kotlin_boot"
+    ports:
+      - "8092:8080"
