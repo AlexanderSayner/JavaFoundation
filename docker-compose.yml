@@ -22,3 +22,13 @@ services:
     container_name: "kotlin_boot"
     ports:
       - "8092:8080"
+    depends_on:
+      - redis-foundation
+
+  redis-foundation:
+    image: redis:6.0.5-buster
+    command: ["redis-server", "--appendonly", "yes"]
+    container_name: "redis_foundation"
+    restart: always
+    ports:
+      - "6389:6379"
