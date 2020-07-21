@@ -21,47 +21,40 @@ fun getFormat(file: MultipartFile): String {
     return format.reversed()
 }
 
-fun hasXlsxFormat(file: MultipartFile): Boolean {
-    if (getFormat(file).equals(TYPEx, true))
-        return true
-    return false
-}
+fun hasXlsxFormat(file: MultipartFile) =
+        getFormat(file).equals(TYPEx, true)
 
-fun hasXlsFormat(file: MultipartFile): Boolean {
-    if (getFormat(file).equals(TYPE, true))
-        return true
-    return false
-}
 
-fun xlsxToModel(inputStream: InputStream): List<Ruler> {
-    val workBook = XSSFWorkbook(inputStream)
-    return excelToModel(workBook)
-}
+fun hasXlsFormat(file: MultipartFile) =
+        getFormat(file).equals(TYPE, true)
 
-fun xlsToModel(inputStream: InputStream): List<Ruler> {
-    val workBook = HSSFWorkbook(inputStream)
-    return excelToModel(workBook)
-}
+
+fun xlsxToModel(inputStream: InputStream) =
+        excelToModel(XSSFWorkbook(inputStream))
+
+fun xlsToModel(inputStream: InputStream) =
+        excelToModel(HSSFWorkbook(inputStream))
+
 
 fun excelToModel(workBook: Workbook): List<Ruler> {
     val list = mutableListOf<Ruler>()
     val sheetIterator = workBook.sheetIterator()
     while (sheetIterator.hasNext()) {
         val sheet = sheetIterator.next()
-        val iterator = sheet.iterator()
-        if (iterator.hasNext())
-            iterator.next() // Skipping header
-        while (iterator.hasNext()) {
-            val row = iterator.next()
-            val rowIterator = row.iterator()
+        val rowIterator = sheet.iterator()
+        if (rowIterator.hasNext())
+            rowIterator.next() // Skipping header
+        while (rowIterator.hasNext()) {
+            val row = rowIterator.next()
+            val cellIterator = row.iterator()
             var index = 0
             var plu = 0.0
             var description = ""
             var horizontal = ""
             var vertical = ""
-            while (rowIterator.hasNext()) {
-                val cell = rowIterator.next()
-                when (index % 4) {
+            while (cellIterator.hasNext()) {
+                val cell = cellIterator.next()
+                when (index++ % 4) {
                     0 -> plu = cell.numericCellValue
                     1 -> description = cell.stringCellValue
                     2 -> horizontal = cell.stringCellValue
@@ -70,7 +63,6 @@ fun excelToModel(workBook: Workbook): List<Ruler> {
                         println("Something wrong")
                     }
                 }
-                index++
             }
             val ruler = Ruler(plu.toInt(), description, horizontal, vertical)
             list.add(ruler)
