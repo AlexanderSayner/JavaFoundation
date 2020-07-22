@@ -20,11 +20,11 @@ COPY src    /opt/app/src/
 COPY pom.xml /opt/app/
 WORKDIR /opt
 
-RUN wget https://downloads.apache.org/maven/binaries/apache-maven-3.2.2-bin.tar.gz && \
-    tar -xf apache-maven-3.2.2-bin.tar.gz && \
-    rm apache-maven-3.2.2-bin.tar.gz && \
+RUN wget http://mirror.linux-ia64.org/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz && \
+    tar -xf apache-maven-3.6.3-bin.tar.gz && \
+    rm apache-maven-3.6.3-bin.tar.gz && \
     cd app && \
-    /opt/apache-maven-3.2.2/bin/mvn package
+    /opt/apache-maven-3.6.3/bin/mvn package
 
 RUN \
  asadmin start-domain  && \
