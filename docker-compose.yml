@@ -1,14 +1,14 @@
 version: "3"
 
 services:
-
+#
   maven-welcome-servlet:
-    build: blackened/maven-servlet/
+    build: blackened/maven-servlet
     container_name: "welcome_tomcat_maven"
     ports:
       - "8080:8080"
       - "8443:8443"
-
+#
   glassfish-welcome:
     build: blackened/glassfish-easy
     container_name: "glassfish"
@@ -16,7 +16,14 @@ services:
       - "8091:8080"
       - "8454:8443"
       - "4859:4848"
-
+#
+  jetty-spring:
+    build: blackened/jetty-spring
+    container_name: "jetty_spring"
+    ports:
+      - "9080:8080"
+      - "9443:8443"
+#
   spring-boot-gradle:
     build: blackened/gradle-boot
     container_name: "kotlin_boot"
@@ -24,7 +31,7 @@ services:
       - "8092:8080"
     depends_on:
       - redis-foundation
-
+#
   redis-foundation:
     image: redis:6.0.5-buster
     command: ["redis-server", "--appendonly", "yes"]
@@ -32,3 +39,4 @@ services:
     restart: always
     ports:
       - "6389:6379"
+#

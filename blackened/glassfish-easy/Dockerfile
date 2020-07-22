@@ -15,13 +15,22 @@ RUN \
   EOF\n'\
   >> /opt/pwdfile
 
-COPY target/glassfish-easy-1.0-SNAPSHOT.war /opt/app/
+# build project
+COPY src    /opt/app/src/
+COPY pom.xml /opt/app/
+WORKDIR /opt
+
+RUN wget http://mirror.linux-ia64.org/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz && \
+    tar -xf apache-maven-3.6.3-bin.tar.gz && \
+    rm apache-maven-3.6.3-bin.tar.gz && \
+    cd app && \
+    /opt/apache-maven-3.6.3/bin/mvn package
 
 RUN \
  asadmin start-domain  && \
  asadmin --user $ADMIN_USER --passwordfile=/opt/tmpfile change-admin-password  && \
  asadmin --user $ADMIN_USER --passwordfile=/opt/pwdfile enable-secure-admin  && \
- asadmin --user admin --passwordfile=/opt/pwdfile deploy /opt/app/glassfish-easy-1.0-SNAPSHOT.war  && \
+ asadmin --user admin --passwordfile=/opt/pwdfile deploy /opt/app/target/glassfish-easy-1.0-SNAPSHOT.war  && \
  asadmin stop-domain
 
 # cleanup

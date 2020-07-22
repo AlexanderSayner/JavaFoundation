@@ -5,6 +5,7 @@ import org.sayner.sandbox.example.springboot.allspringboot.dto.BasicAnswer
 import org.sayner.sandbox.example.springboot.allspringboot.model.Ruler
 import org.sayner.sandbox.example.springboot.allspringboot.redis.repository.RulerRepository
 import org.springframework.http.HttpStatus
+import org.springframework.http.HttpStatus.OK
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -16,7 +17,7 @@ class RulerController(private val rulerRepository: RulerRepository) {
     fun get(@PathVariable id: Int): ResponseEntity<Ruler> {
         return ResponseEntity(
                 rulerRepository.findById(id).orElse(Ruler(-1, "error", "error", "error")),
-                HttpStatus.OK
+                OK
         )
     }
 
@@ -24,6 +25,6 @@ class RulerController(private val rulerRepository: RulerRepository) {
     @PostMapping("/new")
     fun add(@RequestBody ruler: Ruler): ResponseEntity<BasicAnswer> {
         rulerRepository.save(ruler)
-        return ResponseEntity(BasicAnswer("successful", "all done"), HttpStatus.OK)
+        return ResponseEntity(BasicAnswer("successful", "all done"), OK)
     }
 }
