@@ -20,8 +20,7 @@ COPY src    /opt/app/src/
 COPY pom.xml /opt/app/
 WORKDIR /opt
 
-RUN apt-get install -yq wget && \
-    wget https://downloads.apache.org/maven/binaries/apache-maven-3.2.2-bin.tar.gz && \
+RUN wget https://downloads.apache.org/maven/binaries/apache-maven-3.2.2-bin.tar.gz && \
     tar -xf apache-maven-3.2.2-bin.tar.gz && \
     rm apache-maven-3.2.2-bin.tar.gz && \
     cd app && \
