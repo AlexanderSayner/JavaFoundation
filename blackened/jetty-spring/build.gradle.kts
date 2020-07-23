@@ -19,12 +19,16 @@ repositories {
     mavenCentral()
 }
 
-val javaEEv = "8.0.1"
+val servletApiVersion = "4.0.1"
+val jstlVersion = "1.2"
+val springFrameworkVersion = "5.2.8.RELEASE"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("javax:javaee-api:${javaEEv}")
+    providedCompile("javax.servlet:javax.servlet-api:${servletApiVersion}")
+    implementation("javax.servlet.jsp.jstl:jstl-api:${jstlVersion}")
+    implementation("org.springframework:spring-webmvc:${springFrameworkVersion}")
 }
 
 tasks.withType<Test> {

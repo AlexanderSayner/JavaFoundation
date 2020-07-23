@@ -27,7 +27,7 @@ $ docker-compose up --build --force-recreate
 + *glassfish-easy* - деплой простейшего приложения Java EE на сервер GlassFish4
 + *gradle-boot* - исследование фреймворка Spring Boot
 
-Быся проверка работоспособности приложений:
+Быстрая проверка работоспособности приложений:
 ```http request
 https://localhost:8443/maven-servlet-1.0-SNAPSHOT/ui/home
 ```
@@ -36,4 +36,7 @@ http://localhost:8091/glassfish-easy-1.0-SNAPSHOT
 ```
 ```http request
 http://localhost:8092/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+```
+```http request
+http://localhost:9080/
 ```

@@ -1,4 +1,6 @@
 FROM maven
+
+RUN mvn --version
 # Сборка проекта
 COPY src    /opt/app/src/
 COPY pom.xml /opt/app/
