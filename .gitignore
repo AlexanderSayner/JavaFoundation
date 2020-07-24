@@ -6,6 +6,9 @@
 *.log.gz
 **/logs
 
+# System settings file
+*.directory
+
 # BlueJ files
 *.ctxt
 
@@ -35,6 +38,7 @@ hs_err_pid*
 **/build/
 **/gradle/
 **/.gradle/
+gradlew.bat
 
 # Backup files
 *.save
