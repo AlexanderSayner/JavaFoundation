@@ -34,6 +34,7 @@ hs_err_pid*
 # Eclipse configuration files
 *.classpath
 *.project
+*.settings
 
 # Maven build directory
 **/target/
@@ -48,3 +49,5 @@ gradlew.bat
 *.save
 
 *.hprof
+**/bin/
+
