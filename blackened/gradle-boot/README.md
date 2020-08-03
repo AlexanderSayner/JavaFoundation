@@ -77,3 +77,24 @@ https://www.baeldung.com/spring-rest-openapi-documentation
 ```http request
 https://otus.ru/nest/post/716/
 ```
+
+SQL скрипты
+```shell script
+create table all_spring_boot.user
+(
+	id serial,
+	name varchar,
+	email varchar not null,
+	password varchar not null
+);
+
+create unique index table_name_email_uindex
+	on all_spring_boot.user (email);
+
+create unique index table_name_id_uindex
+	on all_spring_boot.user (id);
+
+alter table all_spring_boot.user
+	add constraint table_name_pk
+		primary key (id);
+```

@@ -34,7 +34,7 @@ services:
 #
   redis-foundation:
     image: redis:6.0.5-buster
-    command: ["redis-server", "--appendonly", "yes"]
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "secret"]
     container_name: "redis_foundation"
     restart: always
     ports:
@@ -50,3 +50,11 @@ services:
       POSTGRES_PASSWORD: secret
     ports:
       - "6543:5432"
+#
+#  elasticsearch-foundation:
+#    image: foundation
+#    container_name: "elasticsearch"
+#    restart: always
+#    ports:
+#      - "9200:9200"
+#      - "9300:9300"

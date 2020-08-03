@@ -25,13 +25,15 @@ repositories {
 val apachePoiVer = "4.1.2"
 val apacheCommonsIoVer = "2.7"
 val swaggerVer = "1.4.3"
+val hibernateVer = "6.0.0.Alpha5"
+val ehcacheVer = "3.8.1"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 //    implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
 //    implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
-//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 //    implementation("org.springframework.boot:spring-boot-starter-data-rest")
 //    implementation("org.springframework.boot:spring-boot-starter-security")
 //    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
@@ -45,6 +47,9 @@ dependencies {
     implementation("org.apache.poi:poi-ooxml:${apachePoiVer}") // Java API To Access Microsoft Format Files
 //    implementation("commons-io:commons-io:${apacheCommonsIoVer}") // is a library of utilities to assist with developing IO functionality
 //    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    implementation("org.hibernate.orm:hibernate-jcache:${hibernateVer}")
+    implementation("org.ehcache:ehcache:${ehcacheVer}")
+
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {

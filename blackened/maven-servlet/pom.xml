@@ -28,19 +28,19 @@
                 </configuration>
             </plugin>
             <!--Проверяет последние версии зависимостей-->
-            <plugin>
-                <groupId>com.soebes.maven.plugins</groupId>
-                <artifactId>uptodate-maven-plugin</artifactId>
-                <version>0.2.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>dependency</goal>
-                        </goals>
-                        <phase>validate</phase>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.soebes.maven.plugins</groupId>-->
+<!--                <artifactId>uptodate-maven-plugin</artifactId>-->
+<!--                <version>0.2.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>dependency</goal>-->
+<!--                        </goals>-->
+<!--                        <phase>validate</phase>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
