@@ -4,10 +4,10 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import org.slf4j.Logger;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -19,12 +19,11 @@ public class FCMInitializer {
     @PostConstruct
     public void initialize() {
         try {
-
-            final FileInputStream serviceAccount =
-                    new FileInputStream("google/fuck.json");
+            final ClassPathResource resource =
+                    new ClassPathResource("awesomesandbox-93ab4-firebase-adminsdk-t18vg-123b5d247e.json");
 
             final FirebaseOptions options = FirebaseOptions.builder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .setCredentials(GoogleCredentials.fromStream(resource.getInputStream()))
                     .setDatabaseUrl("https://awesomesandbox-93ab4.firebaseio.com")
                     .build();
 
