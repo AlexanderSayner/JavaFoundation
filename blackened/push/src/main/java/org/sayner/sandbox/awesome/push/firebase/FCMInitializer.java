@@ -1,4 +1,4 @@
-package org.sayner.sandbox.awesome.push.service;
+package org.sayner.sandbox.awesome.push.firebase;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
