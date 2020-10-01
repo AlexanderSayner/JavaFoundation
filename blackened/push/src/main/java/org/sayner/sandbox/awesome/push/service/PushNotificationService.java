@@ -59,10 +59,9 @@ public class PushNotificationService {
         }
     }
 
-
     public void sendPushNotificationToToken(PushNotificationRequest request) {
         try {
-            fcmService.sendMessageToToken(request);
+            fcmService.sendMessageToTokenWithData(getSamplePayloadData(), request);
         } catch (InterruptedException | ExecutionException e) {
             logger.error(e.getMessage());
         }

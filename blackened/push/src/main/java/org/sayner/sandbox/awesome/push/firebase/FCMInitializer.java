@@ -20,11 +20,11 @@ public class FCMInitializer {
     public void initialize() {
         try {
             final ClassPathResource resource =
-                    new ClassPathResource("awesomesandbox-93ab4-firebase-adminsdk-t18vg-123b5d247e.json");
+                    new ClassPathResource("pushnotificationssample-bf992-firebase-adminsdk-rwm7e-54fad10d14.json");
 
             final FirebaseOptions options = FirebaseOptions.builder()
                     .setCredentials(GoogleCredentials.fromStream(resource.getInputStream()))
-                    .setDatabaseUrl("https://awesomesandbox-93ab4.firebaseio.com")
+                    .setDatabaseUrl("https://pushnotificationssample-bf992.firebaseio.com")
                     .build();
 
             FirebaseApp.initializeApp(options);
