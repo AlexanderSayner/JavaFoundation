@@ -1,0 +1,4 @@
+# Literature
+```http request
+https://blog.mestwin.net/send-push-notifications-from-spring-boot-server-side-application-using-fcm/
+```
