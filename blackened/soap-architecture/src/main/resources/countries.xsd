@@ -2,6 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.sayner.org/sandbox/soap/generated"
            targetNamespace="http://www.sayner.org/sandbox/soap/generated" elementFormDefault="qualified">
 
+    <!--  Country API  -->
     <xs:element name="getCountryRequest">
         <xs:complexType>
             <xs:sequence>
@@ -34,4 +35,30 @@
             <xs:enumeration value="PLN"/>
         </xs:restriction>
     </xs:simpleType>
+
+    <!--  REST API  -->
+    <xs:element name="getUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:awesomeUser"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="awesomeUser">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="id" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
 </xs:schema>

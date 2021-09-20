@@ -1,7 +1,8 @@
-package org.sayner.sandbox.soap;
+package org.sayner.sandbox.soap.endpoint;
 
-import org.sayner.sandbox.soap.generated.GetCountryRequest;
-import org.sayner.sandbox.soap.generated.GetCountryResponse;
+import org.sayner.sandbox.soap.repository.CountryRepository;
+import org.sayner.sandbox.soap.generated.*;
+import org.sayner.sandbox.soap.service.UserService;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -16,9 +17,12 @@ public class CountryEndpoint {
     private static final String NAMESPACE_URI = "http://www.sayner.org/sandbox/soap/generated";
 
     private final CountryRepository countryRepository;
+    private final UserService userService;
 
-    public CountryEndpoint(CountryRepository countryRepository) {
+    public CountryEndpoint(CountryRepository countryRepository,
+                           UserService userService) {
         this.countryRepository = countryRepository;
+        this.userService = userService;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest") // defines the handler method according to the namespace and localPart attributes
@@ -26,6 +30,15 @@ public class CountryEndpoint {
     public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
         final GetCountryResponse response = new GetCountryResponse();
         response.setCountry(countryRepository.findCountry(request.getName()));
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI,localPart = "getUserRequest")
+    @ResponsePayload
+    public GetUserResponse getRest(@RequestPayload GetUserRequest request){
+        final GetUserResponse response=new GetUserResponse();
+        response.setUser(userService.findUserByEmail(request.getEmail()));
+        userService.fluxUser();
         return response;
     }
 }

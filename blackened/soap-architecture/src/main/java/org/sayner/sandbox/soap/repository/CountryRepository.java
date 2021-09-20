@@ -1,4 +1,4 @@
-package org.sayner.sandbox.soap;
+package org.sayner.sandbox.soap.repository;
 
 import org.sayner.sandbox.soap.generated.Country;
 import org.sayner.sandbox.soap.generated.Currency;
