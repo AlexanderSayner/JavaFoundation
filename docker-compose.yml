@@ -2,41 +2,41 @@ version: "3"
 
 services:
 #
-  maven-welcome-servlet:
-    build: blackened/maven-servlet
-    container_name: "welcome_tomcat_maven"
-    restart: always
-    ports:
-      - "8080:8080"
-      - "8443:8443"
-#
-  glassfish-welcome:
-    build: blackened/glassfish-easy
-    container_name: "glassfish"
-    restart: always
-    ports:
-      - "8091:8080"
-      - "8454:8443"
-      - "4859:4848"
-#
-  jetty-spring:
-    build: blackened/jetty-spring
-    container_name: "jetty_spring"
-    restart: always
-    ports:
-      - "9080:8080"
-      - "9443:8443"
-#
-  spring-boot-gradle:
-    build: blackened/gradle-boot
-    container_name: "kotlin_boot"
-    restart: always
-    ports:
-      - "8092:8080"
-    depends_on:
-      - redis-foundation
-      - postgres-foundation
-      - cassandra-foundation
+#  maven-welcome-servlet:
+#    build: blackened/maven-servlet
+#    container_name: "welcome_tomcat_maven"
+#    restart: always
+#    ports:
+#      - "8080:8080"
+#      - "8443:8443"
+
+#  glassfish-welcome:
+#    build: blackened/glassfish-easy
+#    container_name: "glassfish"
+#    restart: always
+#    ports:
+#      - "8091:8080"
+#      - "8454:8443"
+#      - "4859:4848"
+
+#  jetty-spring:
+#    build: blackened/jetty-spring
+#    container_name: "jetty_spring"
+#    restart: always
+#    ports:
+#      - "9080:8080"
+#      - "9443:8443"
+
+#  spring-boot-gradle:
+#    build: blackened/gradle-boot
+#    container_name: "kotlin_boot"
+#    restart: always
+#    ports:
+#      - "8092:8080"
+#    depends_on:
+#      - redis-foundation
+#      - postgres-foundation
+#      - cassandra-foundation
 #
   redis-foundation:
     image: redis:6.0.5-buster
@@ -55,17 +55,17 @@ services:
     ports:
       - "6543:5432"
 #
-  cassandra-foundation:
-    image: cassandra
-    container_name: "cassandra"
-    environment:
-      - CLUSTER_NAME=foundation
-    ports:
-      - "7000:7000" # Intra-node communication
-      - "7001:7001" # TLS intra-node communication
-      - "7199:7199" # JMX
-      - "9042:9042" # CQL
-      - "9142:9142" # CQL SSL
+#  cassandra-foundation:
+#    image: cassandra
+#    container_name: "cassandra"
+#    environment:
+#      - CLUSTER_NAME=foundation
+#    ports:
+#      - "7000:7000" # Intra-node communication
+#      - "7001:7001" # TLS intra-node communication
+#      - "7199:7199" # JMX
+#      - "9042:9042" # CQL
+#      - "9142:9142" # CQL SSL
 #
 #  elasticsearch-foundation:
 #    image: foundation
