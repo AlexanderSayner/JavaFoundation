@@ -1,12 +1,9 @@
 package org.sayner.sandbox.example.springboot.allspringboot.util
 
-import liquibase.pro.packaged.it
 import org.sayner.sandbox.example.springboot.allspringboot.model.AwesomeUser
 import org.sayner.sandbox.example.springboot.allspringboot.repository.UserRepository
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
-import java.util.function.Predicate
-import java.util.stream.Collectors
 import java.util.stream.Collectors.toSet
 
 @Component
